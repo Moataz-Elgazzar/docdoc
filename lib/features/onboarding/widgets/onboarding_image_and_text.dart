@@ -16,12 +16,14 @@ class OnboardingImageAndText extends StatelessWidget {
           left: -80.w,
           child: SvgPicture.asset(AppImages.onboardingLowObasityLogo, height: 400.h, width: double.infinity),
         ),
+
         Container(
           foregroundDecoration: BoxDecoration(
             gradient: LinearGradient(colors: [AppColors.wightColor, AppColors.wightColor.withValues(alpha: 0.0)], begin: Alignment.bottomCenter, end: Alignment.topCenter, stops: [0.14, 0.4]),
           ),
           child: Image.asset(AppImages.onboardingImage, height: 491.h, width: double.infinity),
         ),
+        
         Positioned(
           bottom: 30.h,
           left: 0,
