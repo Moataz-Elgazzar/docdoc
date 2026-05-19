@@ -12,7 +12,7 @@ class AppThemes {
     ),
     colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor, onSurface: AppColors.wightColor),
     inputDecorationTheme: InputDecorationTheme(
-      hintStyle: TextStyle(color: AppColors.greyColor),
+      hintStyle: const TextStyle(color: AppColors.greyColor),
       enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: BorderSide.none),
       focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: BorderSide.none),
       errorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: BorderSide.none),
