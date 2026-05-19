@@ -1,0 +1,38 @@
+name: docdoc
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  dio: ^5.9.2
+  easy_localization: ^3.0.8
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_native_splash: ^2.4.7
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.3.0
+  freezed_annotation: ^3.1.0
+  get_it: ^9.2.1
+  intl: ^0.20.2
+  json_annotation: ^4.12.0
+  json_serializable: ^6.14.0
+  pretty_dio_logger: ^1.4.0
+  retrofit: ^4.9.2
+  retrofit_generator: ^10.2.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
