@@ -1,5 +1,7 @@
 import 'package:docdoc/core/components/buttons/main_button.dart';
 import 'package:docdoc/core/constants/app_images.dart';
+import 'package:docdoc/core/routes/navigator.dart';
+import 'package:docdoc/core/routes/routes.dart';
 import 'package:docdoc/core/utils/text_style.dart';
 import 'package:docdoc/features/onboarding/widgets/onboarding_image_and_text.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +29,13 @@ class OnboardingScreen extends StatelessWidget {
               children: [
                 Text("Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.", style: TextStyles.size13RegularGreyColor, textAlign: TextAlign.center),
                 Gap(20.h),
-                
-                MainButton(elevatedButtonText: 'Get Started', onPressed: () {}),
+
+                MainButton(
+                  elevatedButtonText: 'Get Started',
+                  onPressed: () {
+                    pushTo(context, Routes.login);
+                  },
+                ),
               ],
             ),
           ),
