@@ -1,3 +1,4 @@
+import 'package:docdoc/features/login/presentation/pages/login_screen.dart';
 import 'package:docdoc/features/onboarding/onboarding_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -5,11 +6,10 @@ class Routes {
   static const String onboarding = '/';
   static const String login = '/login';
 
-
- static GoRouter  route = GoRouter(
+  static GoRouter route = GoRouter(
     routes: [
-      GoRoute(path: onboarding, builder: (context, state) => const OnboardingScreen(),)
-    ]
-  ) ;
-    
+      GoRoute(path: onboarding, builder: (context, state) => const OnboardingScreen()),
+      GoRoute(path: login, builder: (context, state) => const LoginScreen()),
+    ],
+  );
 }
