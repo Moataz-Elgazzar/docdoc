@@ -1,11 +1,11 @@
+import 'package:docdoc/core/routes/navigator.dart';
+import 'package:docdoc/core/routes/routes.dart';
 import 'package:docdoc/core/utils/text_style.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class DontHaveAnaccount extends StatelessWidget {
-  const DontHaveAnaccount({
-    super.key,
-  });
+  const DontHaveAnaccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,14 @@ class DontHaveAnaccount extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(text: "Don't have an account?  ", style: TextStyles.size12RegularBlackColor),
-          TextSpan(text: "Sign Up", style: TextStyles.size12RegularPrimaryColor, recognizer: TapGestureRecognizer()..onTap = () {}),
+          TextSpan(
+            text: "Sign Up",
+            style: TextStyles.size12RegularPrimaryColor,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                pushWithReplacement(context, Routes.signup);
+              },
+          ),
         ],
       ),
     );
