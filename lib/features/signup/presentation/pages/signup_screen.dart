@@ -40,7 +40,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   Gap(30.h),
                   const TermsCoditionAndPrivacyPolicy(),
-                  Gap(80.h),
+                  Gap(40.h),
                   const Center(child: AlreadyHaveAnaccount()),
                   const SignupBlocListener(),
                 ],
