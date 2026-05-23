@@ -1,10 +1,12 @@
 import 'package:docdoc/core/components/buttons/main_button.dart';
 import 'package:docdoc/core/utils/text_style.dart';
-import 'package:docdoc/core/widgets/app_text_form_field.dart';
-import 'package:docdoc/features/login/presentation/widgets/already_have_anaccount.dart';
+import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
+import 'package:docdoc/features/login/presentation/widgets/dont_have_anaccount.dart';
+import 'package:docdoc/features/login/presentation/widgets/email_and_password.dart';
+import 'package:docdoc/features/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:docdoc/features/login/presentation/widgets/terms_codition_and_privacy_policy.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
@@ -16,7 +18,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final formKey = GlobalKey<FormState>();
   bool isObsecure = true;
 
   @override
@@ -36,37 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Gap(8.h),
                   Text('We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.', style: TextStyles.size15RegularGreyColor),
                   Gap(36.h),
-                  Form(
-                    key: formKey,
-                    child: Column(
-                      children: [
-                        const AppTextFormField(hintText: 'Email', keyboardType: TextInputType.emailAddress),
-                        Gap(16.h),
-                        AppTextFormField(
-                          keyboardType: TextInputType.number,
-                          hintText: 'Password',
-                          obscureText: isObsecure,
-                          suffixIcon: isObsecure
-                              ? GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      isObsecure = !isObsecure;
-                                    });
-                                  },
-                                  child: const Icon(Icons.visibility_off),
-                                )
-                              : GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      isObsecure = !isObsecure;
-                                    });
-                                  },
-                                  child: const Icon(Icons.visibility),
-                                ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  const EmailAndPassword(),
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
@@ -76,11 +47,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   Gap(41.h),
-                  MainButton(elevatedButtonText: "Login", onPressed: () {}),
+                  MainButton(
+                    elevatedButtonText: "Login",
+                    onPressed: () {
+                      validateThenDoLogin();
+                    },
+                  ),
                   Gap(30.h),
                   const TermsCoditionAndPrivacyPolicy(),
                   Gap(80.h),
-                  const Center(child: AlreadyHaveAnaccount()),
+                  const Center(child: DontHaveAnaccount()),
+                  const LoginBlocListener(),
                 ],
               ),
             ),
@@ -88,5 +65,11 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void validateThenDoLogin() {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().login();
+    }
   }
 }

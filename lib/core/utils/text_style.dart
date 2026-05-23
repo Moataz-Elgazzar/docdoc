@@ -18,9 +18,13 @@ class TextStyles {
 
   static TextStyle size15RegularGreyColor = TextStyle(fontSize: 15.sp, fontWeight: FontWeightHelper.regular, color: AppColors.greyColor);
 
+  static TextStyle size16RegularBlackColor = TextStyle(fontSize: 16.sp, fontWeight: FontWeightHelper.regular, color: AppColors.blackColor);
+
   static TextStyle size14MediumGreyColor = TextStyle(fontSize: 14.sp, fontWeight: FontWeightHelper.medium, color: AppColors.greyColorhint);
 
   static TextStyle size14MediumBlackColor = TextStyle(fontSize: 14.sp, fontWeight: FontWeightHelper.medium, color: AppColors.blackColorTestStyleFormField);
+
+  static TextStyle size14semiBoldBlueColor = TextStyle(fontSize: 14.sp, fontWeight: FontWeightHelper.semiBold, color: AppColors.primaryColor);
 
   static TextStyle size16SemiBoldwhiteColor = TextStyle(fontSize: 16.sp, fontWeight: FontWeightHelper.semiBold, color: AppColors.wightColor);
 }

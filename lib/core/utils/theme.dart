@@ -6,7 +6,7 @@ class AppThemes {
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.wightColor,
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.wightColor,
+      backgroundColor: AppColors.primaryColor,
       elevation: 0,
       iconTheme: IconThemeData(color: AppColors.blackColor),
     ),
