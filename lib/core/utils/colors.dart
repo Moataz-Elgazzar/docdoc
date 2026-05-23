@@ -12,4 +12,5 @@ class AppColors {
   static const Color greyColorBackGroundFormField = Color(0xFFFDFDFF);
   static const Color blackColorTestStyleFormField = Color(0xFF242424);
   static const Color greyColorTermsAndConditions = Color(0xFF9E9E9E);
+  static const Color redColor = Color(0xFFFF4C5E);
 }

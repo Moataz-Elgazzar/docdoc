@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFormField extends StatelessWidget {
-  const AppTextFormField({super.key, required this.hintText, this.suffixIcon, this.obscureText, this.style, this.fillColor, this.filled, this.hintStyle, this.controller, this.enabledBorder, this.focusedBorder, this.contentPadding, this.keyboardType, this.textInputAction, this.textDirection});
+  const AppTextFormField({super.key, required this.hintText, this.suffixIcon, this.obscureText, this.style, this.fillColor, this.filled, this.hintStyle, this.controller, this.enabledBorder, this.focusedBorder, this.contentPadding, this.keyboardType, this.textInputAction, this.textDirection, required this.validator, this.focusNode});
 
   final String hintText;
   final Widget? suffixIcon;
@@ -20,10 +20,14 @@ class AppTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
   final TextDirection? textDirection;
+  final String? Function(String?) validator;
+  final FocusNode? focusNode ;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      focusNode: focusNode,
+      validator: validator,
       showCursor: true,
       textDirection: textDirection,
       textInputAction: textInputAction,
@@ -44,6 +48,15 @@ class AppTextFormField extends StatelessWidget {
               borderSide: BorderSide(color: AppColors.greyColorborder, width: 1.3.w),
               borderRadius: BorderRadius.circular(16.r),
             ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.redColor, width: 1.3.w),
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.redColor, width: 1.3.w),
+          borderRadius: BorderRadius.circular(16.r),
+        ),
         hintStyle: hintStyle ?? TextStyles.size14MediumGreyColor,
         hintText: hintText,
         filled: filled ?? true,
