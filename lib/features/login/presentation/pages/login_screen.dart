@@ -80,9 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Gap(30.h),
                   const TermsCoditionAndPrivacyPolicy(),
                   Gap(80.h),
-                  const Center(
-                    child: AlreadyHaveAnaccount(),
-                  ),
+                  const Center(child: AlreadyHaveAnaccount()),
                 ],
               ),
             ),

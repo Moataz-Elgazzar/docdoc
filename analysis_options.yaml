@@ -7,3 +7,7 @@ linter:
     prefer_final_locals: true
     prefer_final_fields: true
     avoid_unnecessary_containers: true
+
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
