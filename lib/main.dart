@@ -1,10 +1,12 @@
+import 'package:docdoc/core/di/dependency_injection.dart';
 import 'package:docdoc/core/routes/routes.dart';
 import 'package:docdoc/core/utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupGetIt();
   runApp(const MainApp());
 }
 
