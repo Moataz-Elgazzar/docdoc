@@ -22,7 +22,7 @@ platform :android do
     sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
     firebase_app_distribution(
     app: "1:467868122378:android:a4643c2fe1ba67265b8ef3",
-    firebase_cli_token: "1//038APMBkv4JlwCgYIARAAGAMSNwF-L9Irvz0Gimztign7dPeA_H7a-3wLSPhK3wzejPfyBdzEtwjS7FrFngRD1V3EAocJV33z8AA",
+    firebase_cli_token: ENV["FIREBASE_CLI_TPKEN"],
     android_artifact_type: "APK",
     android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
     testers: "omniamahmoud912019@gmail.com",
