@@ -1,0 +1,14 @@
+import 'package:docdoc/core/utils/text_style.dart';
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('home screen' )),
+      body: Column(children: [Text("Home screen ........", style: TextStyles.size24BoldPrimaryColor)]),
+    );
+  }
+}
