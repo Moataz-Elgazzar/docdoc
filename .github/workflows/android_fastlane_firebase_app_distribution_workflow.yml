@@ -34,8 +34,14 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '4.0'
-          bundler-cache: true
+          bundler-cache: false
           working-directory: android
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+        working-directory: android
 
       - name: Install Fastlane dependencies
         run: bundle install
