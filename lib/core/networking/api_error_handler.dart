@@ -106,6 +106,9 @@ class ErrorHandler implements Exception {
 }
 
 ApiErrorModel _handleError(DioException error) {
+  print(error.type);
+  print(error.message);
+  print(error.error);
   switch (error.type) {
     case DioExceptionType.connectionTimeout:
       return DataSource.CONNECT_TIMEOUT.getFailure();
@@ -128,9 +131,9 @@ ApiErrorModel _handleError(DioException error) {
     case DioExceptionType.cancel:
       return DataSource.CANCEL.getFailure();
     case DioExceptionType.connectionError:
-      return DataSource.DEFAULT.getFailure();
+      return ApiErrorModel(code: -1, message: error.message ?? "Connection Error");
     case DioExceptionType.badCertificate:
-      return DataSource.DEFAULT.getFailure();
+      return ApiErrorModel(code: -2, message: error.message ?? "Bad Certificate");
   }
 }
 

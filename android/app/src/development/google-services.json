@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "467868122378",
+    "project_id": "docdoc-app-distribution-db60c",
+    "storage_bucket": "docdoc-app-distribution-db60c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467868122378:android:a4643c2fe1ba67265b8ef3",
+        "android_client_info": {
+          "package_name": "com.example.docdoc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNc-PgEStXo9zzoIVVqFq3QHfLTxxjggg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467868122378:android:b63e5b28b8c092835b8ef3",
+        "android_client_info": {
+          "package_name": "com.example.docdoc.development"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNc-PgEStXo9zzoIVVqFq3QHfLTxxjggg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
