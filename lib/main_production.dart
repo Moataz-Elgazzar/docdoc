@@ -30,6 +30,6 @@ class MainApp extends StatelessWidget {
 }
 
 Future<bool> checkUserInLogin() async {
-  final String? userToken = SharedPreferencesHelper.getData<String>(SharedPrefKeys.kUserToken);
+  final String? userToken = SharedPreferencesHelper.getSecuredString(SharedPrefKeys.kUserToken);
   return !userToken.isNullOrEmptyty();
 }
