@@ -11,7 +11,7 @@ class DoctorsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.zero,
-      shrinkWrap: true,
+
       scrollDirection: Axis.vertical,
       itemCount: doctors.length,
       itemBuilder: (context, index) => DoctorItem(doctor: doctors[index]),

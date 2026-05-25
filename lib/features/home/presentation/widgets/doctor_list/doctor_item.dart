@@ -23,7 +23,7 @@ class DoctorItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: CachedNetworkImage(imageUrl: doctor.photo, height: 126.h, width: 110.w, fit: BoxFit.cover),
+            child: CachedNetworkImage(imageUrl: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg', height: 126.h, width: 110.w, fit: BoxFit.cover),
           ),
           Expanded(
             child: Padding(
