@@ -33,7 +33,7 @@ class OnboardingScreen extends StatelessWidget {
                 MainButton(
                   elevatedButtonText: 'Get Started',
                   onPressed: () {
-                    pushTo(context, Routes.login);
+                    pushAndRemoveUntil(context, Routes.home);
                   },
                 ),
               ],
