@@ -34,8 +34,8 @@ class Doctors {
   final String gender;
   final String address;
   final String degree;
-  @JsonKey(name: "Doctors")
-  final String price;
+  @JsonKey(name: "appoint_price")
+  final int price;
   @JsonKey(name: "start_time")
   final String startTime;
   @JsonKey(name: "end_time")

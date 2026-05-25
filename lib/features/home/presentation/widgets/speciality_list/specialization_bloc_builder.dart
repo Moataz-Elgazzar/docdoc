@@ -12,7 +12,7 @@ class SpecializationBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
-      //buildWhen: (previous, current) => current is SpecializationLoading || current is SpecializationSuccess || current is SpecializationError,
+      buildWhen: (previous, current) => current is SpecializationLoading || current is SpecializationSuccess || current is SpecializationError,
       builder: (context, state) {
         return state.maybeWhen(
           specializationLoading: () {
@@ -27,7 +27,7 @@ class SpecializationBlocBuilder extends StatelessWidget {
                 SpecialityListView(specializationData: specializationDataList),
                 const Gap(23),
             
-                DoctorsListView(doctors: specializationDataList.first.doctorList),
+                Expanded(child: DoctorsListView(doctors: specializationDataList.first.doctorList)),
               ],
             );
           },
