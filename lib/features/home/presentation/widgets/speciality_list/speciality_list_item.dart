@@ -1,6 +1,7 @@
 import 'package:docdoc/core/constants/app_images.dart';
 import 'package:docdoc/core/utils/colors.dart';
 import 'package:docdoc/core/utils/text_style.dart';
+import 'package:docdoc/features/home/data/models/specialization_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +9,8 @@ import 'package:gap/gap.dart';
 
 class SpecialityListItem extends StatelessWidget {
   final int indexItem;
-  const SpecialityListItem({super.key, required this.indexItem});
+  final SpecializationData specializationData;
+  const SpecialityListItem({super.key, required this.indexItem, required this.specializationData});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class SpecialityListItem extends StatelessWidget {
             child: SvgPicture.asset(AppImages.doctorSpeciality, height: 30.h, width: 30.w),
           ),
           const Gap(12),
-          Text("General", style: TextStyles.size12RegularBlackColor),
+          Text(specializationData.name, style: TextStyles.size12RegularBlackColor),
         ],
       ),
     );

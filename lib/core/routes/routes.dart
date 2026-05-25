@@ -1,4 +1,5 @@
 import 'package:docdoc/core/di/dependency_injection.dart';
+import 'package:docdoc/features/home/logic/cubit/home_cubit.dart';
 import 'package:docdoc/features/home/presentation/pages/home_screen.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/presentation/pages/login_screen.dart';
@@ -25,7 +26,10 @@ class Routes {
         path: signup,
         builder: (context, state) => BlocProvider(create: (context) => getIt<SignupCubit>(), child: const SignupScreen()),
       ),
-      GoRoute(path: home, builder: (context, state) => const HomeScreen()),
+      GoRoute(
+        path: home,
+        builder: (context, state) => BlocProvider(create: (context) => HomeCubit(getIt())..getSpecializations(), child: const HomeScreen()),
+      ),
     ],
   );
 }
