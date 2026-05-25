@@ -10,9 +10,15 @@ class TextStyles {
 
   static TextStyle size13RegularGreyColor = TextStyle(fontSize: 13.sp, fontWeight: FontWeightHelper.regular, color: AppColors.greyColor);
 
+  static TextStyle size12MediumGreyColor = TextStyle(fontSize: 12.sp, fontWeight: FontWeightHelper.medium, color: AppColors.greyColor);
+
   static TextStyle size12RegularPrimaryColor = TextStyle(fontSize: 12.sp, fontWeight: FontWeightHelper.regular, color: AppColors.primaryColor);
 
+  static TextStyle size18MediumWighteColor = TextStyle(fontSize: 18.sp, fontWeight: FontWeightHelper.medium, color: AppColors.wightColor);
+
   static TextStyle size12RegularGreyColor = TextStyle(fontSize: 12.sp, fontWeight: FontWeightHelper.regular, color: AppColors.greyColorTermsAndConditions);
+
+  static TextStyle size12RegularTextGreyColor = TextStyle(fontSize: 12.sp, fontWeight: FontWeightHelper.regular, color: AppColors.textGrayColor);
 
   static TextStyle size12RegularBlackColor = TextStyle(fontSize: 12.sp, fontWeight: FontWeightHelper.regular, color: AppColors.blackColorTestStyleFormField);
 
@@ -27,4 +33,10 @@ class TextStyles {
   static TextStyle size14semiBoldBlueColor = TextStyle(fontSize: 14.sp, fontWeight: FontWeightHelper.semiBold, color: AppColors.primaryColor);
 
   static TextStyle size16SemiBoldwhiteColor = TextStyle(fontSize: 16.sp, fontWeight: FontWeightHelper.semiBold, color: AppColors.wightColor);
+
+  static TextStyle size18BoldBlackColor = TextStyle(fontSize: 18.sp, fontWeight: FontWeightHelper.bold, color: AppColors.blackColor);
+
+  static TextStyle size18SemiBoldBlackTextColor = TextStyle(fontSize: 18.sp, fontWeight: FontWeightHelper.semiBold, color: AppColors.blackColorTestStyleFormField);
+
+  static TextStyle size16BoldBlackTextColor = TextStyle(fontSize: 16.sp, fontWeight: FontWeightHelper.bold, color: AppColors.blackColorTestStyleFormField);
 }
