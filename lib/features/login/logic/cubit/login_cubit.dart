@@ -1,4 +1,6 @@
+import 'package:docdoc/core/helper/shared_preferences_helper.dart';
 import 'package:docdoc/core/networking/api_result.dart';
+import 'package:docdoc/core/networking/dio_factory.dart';
 import 'package:docdoc/features/login/data/models/login_request_body.dart';
 import 'package:docdoc/features/login/data/repos/login_repo.dart';
 import 'package:docdoc/features/login/logic/cubit/login_state.dart';
@@ -17,12 +19,18 @@ class LoginCubit extends Cubit<LoginState> {
     emit(const LoginState.loading());
     final response = await _loginRepo.login(LoginRequestBody(email: emailController.text, password: paswswordController.text));
     response.when(
-      success: (loginResponse) {
+      success: (loginResponse) async {
+        await seveUserToken(loginResponse.userData?.token ?? '');
         emit(LoginState.success(loginResponse));
       },
       failure: (error) {
         emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
       },
     );
+  }
+
+  Future<void> seveUserToken(String token) async {
+    await SharedPreferencesHelper.setData(SharedPrefKeys.kUserToken, token);
+    DioFactory.setTokenInHeaderAfterLogin(token);
   }
 }

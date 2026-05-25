@@ -7,11 +7,16 @@ import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/signup/data/repos/signup_repo.dart';
 import 'package:docdoc/features/signup/logic/cubit/signup_cubit.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final getIt = GetIt.instance;
 
 Future<void> setupGetIt() async {
   final Dio dio = await DioFactory.getDio();
+  
+  //init shared preferences
+  final sharedPref = await SharedPreferences.getInstance();
+  getIt.registerLazySingleton<SharedPreferences>(() => sharedPref);
 
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 

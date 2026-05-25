@@ -28,6 +28,7 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   retrofit: ^4.9.2
   retrofit_generator: ^10.2.6
+  shared_preferences: ^2.5.5
 
 dev_dependencies:
   flutter_test:

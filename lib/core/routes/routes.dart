@@ -15,21 +15,24 @@ class Routes {
   static const String signup = '/signup';
   static const String home = '/home';
 
-  static GoRouter route = GoRouter(
-    routes: [
-      GoRoute(path: onboarding, builder: (context, state) => const OnboardingScreen()),
-      GoRoute(
-        path: login,
-        builder: (context, state) => BlocProvider(create: (context) => getIt<LoginCubit>(), child: const LoginScreen()),
-      ),
-      GoRoute(
-        path: signup,
-        builder: (context, state) => BlocProvider(create: (context) => getIt<SignupCubit>(), child: const SignupScreen()),
-      ),
-      GoRoute(
-        path: home,
-        builder: (context, state) => BlocProvider(create: (context) => HomeCubit(getIt())..getSpecializations(), child: const HomeScreen()),
-      ),
-    ],
-  );
+  static GoRouter route(bool isLoggedInUser) {
+    return GoRouter(
+      initialLocation: isLoggedInUser ? home : onboarding,
+      routes: [
+        GoRoute(path: onboarding, builder: (context, state) => const OnboardingScreen()),
+        GoRoute(
+          path: login,
+          builder: (context, state) => BlocProvider(create: (context) => getIt<LoginCubit>(), child: const LoginScreen()),
+        ),
+        GoRoute(
+          path: signup,
+          builder: (context, state) => BlocProvider(create: (context) => getIt<SignupCubit>(), child: const SignupScreen()),
+        ),
+        GoRoute(
+          path: home,
+          builder: (context, state) => BlocProvider(create: (context) => HomeCubit(getIt())..getSpecializations(), child: const HomeScreen()),
+        ),
+      ],
+    );
+  }
 }
